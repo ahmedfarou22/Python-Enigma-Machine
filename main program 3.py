@@ -134,9 +134,84 @@ def __Man_reflector__(number): ## a reflector with hardcoded values
     if number == 25:
         return 19
 
+    if number == 26:
+        return 27
+    if number == 27:
+        return 26
+    if number == 28:
+        return 29
+    if number == 29:
+        return 28
+    if number == 30:
+        return 31
+    if number == 31:
+        return 30
+    if number == 32:
+        return 33
+    if number == 33:
+        return 32
+    if number == 34:
+        return 35
+    if number == 35: 
+        return 36
+    if number == 36:
+        return 35 
+    if number == 37:
+        return 38
+    if number == 38:
+        return 37
+    if number == 39:
+        return 40
+    if number == 40:
+        return 39
+    if number == 41:
+        return 42
+    if number == 42:
+        return 41
+    if number == 43:
+        return 44
+    if number == 44:
+        return 43
+    if number == 45:
+        return 46
+    if number == 46:
+        return 45
+    if number == 47:
+        return 48
+    if number == 48:
+        return 47
+    if number == 49:
+        return 50
+    if number == 50:
+        return 49
+    if number == 51:
+        return 52
+    if number == 52:
+        return 51
+    if number == 53:
+        return 54
+    if number == 54:
+        return 53
+    if number == 55:
+        return 56
+    if number == 56:
+        return 55
+    if number == 57:
+        return 58
+    if number == 58:
+        return 57
+    if number == 59:
+        return 60
+    if number == 60:
+        return 59
+    if number == 61:
+        return 61
+
+    
+
 def __iput_output__(number_or_letter): # to make the program easier all the rotars take in a number and output a number this function turns letters to numbers and numbers to letters
     value = 0
-    alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] 
+    alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"] 
     if number_or_letter in alphabet:
         #this is a letter lets convert to a number 
         for i in range(len(alphabet)):
@@ -152,53 +227,166 @@ def __iput_output__(number_or_letter): # to make the program easier all the rota
 ################### 5 rotors ###############
 
 rotor_dictionary = {
-  "I"   : rotor(["e","k","m","f","l","g","d","q","v","z","n","t","o","w","y","h","x","u","s","p","a","i","b","r","c","j"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"q"),
-  "II"  : rotor(["a","j","d","k","s","i","r","u","x","b","l","h","w","t","m","c","q","g","z","n","p","y","f","v","o","e"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"e"),
-  "III" : rotor(["b","d","f","h","j","l","c","p","r","t","x","v","z","n","y","e","i","w","g","a","k","m","u","s","q","o"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"v"),
-  "IV"  : rotor(["o","p","q","r","x","w","v","y","u","t","a","b","z","c","d","h","s","i","j","k","l","e","g","m","n","f"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"u"),
-  "V"   : rotor(["i","k","z","w","v","u","j","t","s","r","q","l","m","n","c","d","o","p","e","f","y","x","g","h","b","a"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],"b")
+  "I"   : rotor(["e","k","m","f","l","g","d","q","v","z","n","t","o","w","y","h","x","u","s","p","a","i","b","r","c","j","B","Y","C","H","G","L","F","M","N","A","O","E","P","U","X","D","W","V","K","J","I","R","S","Z","T","Q","4","5","7","3","6","2","8","9","1","0"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"],"q"),
+  "II"  : rotor(["a","j","d","k","s","i","r","u","x","b","l","h","w","t","m","c","q","g","z","n","p","y","f","v","o","e","C","X","J","B","O","Q","P","W","A","I","M","U","V","N","H","T","E","F","Z","G","S","R","K","Y","L","D","0","3","5","4","2","1","6","9","8","7"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"],"e"),
+  "III" : rotor(["b","d","f","h","j","l","c","p","r","t","x","v","z","n","y","e","i","w","g","a","k","m","u","s","q","o","G","H","J","F","I","B","A","R","U","Q","T","S","P","V","W","Y","O","Z","X","C","N","L","M","K","D","E","2","3","4","7","6","9","5","8","0","1"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"],"v"),
+  "IV"  : rotor(["o","p","q","r","x","w","v","y","u","t","a","b","z","c","d","h","s","i","j","k","l","e","g","m","n","f","G","A","X","F","H","I","J","E","V","W","D","T","U","B","O","N","Q","S","C","R","L","Y","Z","M","P","K","1","3","2","9","8","7","6","0","5","4"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"],"u"),
+  "V"   : rotor(["i","k","z","w","v","u","j","t","s","r","q","l","m","n","c","d","o","p","e","f","y","x","g","h","b","a","Z","Y","X","W","V","U","T","S","R","Q","P","O","N","M","L","K","J","I","H","G","F","E","D","C","B","A","9","8","7","6","5","4","3","2","1","0"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"],"b")
 }
-
 
 
 # ==========================================================  program Starts Here =============================================================================
 
-###################### configure the plug board ###############
-print("configure the plug board")
-y_n = input("press y to contiune and n to exit the plug board configration ")
+##################### configure the plug board ###############
+print("Before we continue please choose wether you want to use a plugboard or not")
+while True: # validation on input
+    y_n = input("press n to not use a plug board, or press y to use a predefined plugboard : ").lower()
+    if y_n == "y":
+        break
+
+    elif y_n =="n":
+        break    
+
+    else:
+        print("Please enter y or n: ")
+# if y_n == "y":
+#     inputt = []
+#     outputt = []
+#     for i in range(0,32):
+#         match = input("match 2 letters together Example <AB>: ") 
+#         inputt.append(match[0])
+#         outputt.append(match[1])
+#     for k in range(0,32):
+#         inputt.append(outputt[k])
+#         outputt.append(inputt[k])
+
 
 if y_n == "y":
-    inputt = []
-    outputt = []
-    for i in range(0,13):
-        match = input("match 2 letters together Example <AB>: ") 
-        inputt.append(match[0])
-        outputt.append(match[1])
-    for k in range(0,13):
-        inputt.append(outputt[k])
-        outputt.append(inputt[k])
-
+    inputt  =  ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',"0","1","2","3","4","5","6","7","8","9"]
+    outputt =  ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',"9","8","7","6","5","4","3","2","1","0"]
 elif y_n == "n":
     print ("you did not configure a plug board we will proceed without a plug board")
-    inputt  =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-    outputt =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-
-else:
-    print("you did not press y or n restart the program")
+    inputt  =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"]
+    outputt =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"]
 
 
-###################### choose the 3 rotors ###############
-choose_the_first_rotor  = input("first position: choose a  rotor from the one of the five > I, II, III, IV, V : ")
-choose_the_second_rotor = input("second position: choose a  rotor from the one of the five > I, II, III, IV, V : ")
-choose_the_third_rotor  = input("third position: choose a  rotor from the one of the five > I, II, III, IV, V : ")
-
-###################### set values to the 3 rotors ###############
-set_rotor_one    = int(input("what number do you want to set rotor 1 to ? "))
-set_rotor_two    = int(input("what number do you want to set rotor 2 to ? "))
-set_rotor_three  = int(input("what number do you want to set rotor 3 to ? "))
 
 
-message = input("what is the message you want to encript/decript ")
+###################### choose the 3 rotors ############### with validation on input
+while True:
+    choose_the_first_rotor  = input("first position: choose a  rotor from the one of the five > I, II, III, IV, V : ").upper()
+    if choose_the_first_rotor == "I":
+        break
+    if choose_the_first_rotor == "II":
+        break
+    if choose_the_first_rotor == "III":
+        break
+    if choose_the_first_rotor == "IV":
+        break
+    if choose_the_first_rotor == "V":
+        break
+    else:
+        print("Sorry I did not understand that please enter I, II, III, IV, or V")
+
+while True:
+    choose_the_second_rotor = input("second position: choose a  rotor from the one of the five > I, II, III, IV, V : ").upper()
+    if choose_the_first_rotor == "I":
+        break
+    if choose_the_first_rotor == "II":
+        break
+    if choose_the_first_rotor == "III":
+        break
+    if choose_the_first_rotor == "IV":
+        break
+    if choose_the_first_rotor == "V":
+        break
+    else:
+        print("Sorry I did not understand that please enter I, II, III, IV, or V")
+
+while True:
+    choose_the_third_rotor  = input("third position: choose a  rotor from the one of the five > I, II, III, IV, V : ").upper()
+    if choose_the_first_rotor == "I":
+        break
+    if choose_the_first_rotor == "II":
+        break
+    if choose_the_first_rotor == "III":
+        break
+    if choose_the_first_rotor == "IV":
+        break
+    if choose_the_first_rotor == "V":
+        break
+    else:
+        print("Sorry I did not understand that please enter I, II, III, IV, or V")
+
+
+
+###################### set values to the 3 rotors ############### with validations
+while True:
+    try:
+        set_rotor_one    = int(input("what number do you want to set rotor 1 to ? "))
+    except ValueError:
+        print("Sorry, I didn't understand that.")
+        continue
+
+    if set_rotor_one < 0:
+        print("Sorry, your response must not be negative.")
+        continue
+     
+    if set_rotor_one > 62:
+        print("Sorry, your response is bigger than 62.")
+        continue   
+
+    else:
+        break
+
+
+while True:
+    try:
+        set_rotor_two    = int(input("what number do you want to set rotor 2 to ? "))
+    except ValueError:
+        print("Sorry, I didn't understand that.")
+        continue
+
+    if set_rotor_two < 0:
+        print("Sorry, your response must not be negative.")
+        continue
+     
+    if set_rotor_two > 62:
+        print("Sorry, your response is bigger than 62.")
+        continue   
+
+    else:
+        break
+
+
+while True:
+    try:
+        set_rotor_three  = int(input("what number do you want to set rotor 3 to ? "))
+    except ValueError:
+        print("Sorry, I didn't understand that.")
+        continue
+
+    if set_rotor_three < 0:
+        print("Sorry, your response must not be negative.")
+        continue
+     
+    if set_rotor_three > 62:
+        print("Sorry, your response is bigger than 62.")
+        continue   
+
+    else:
+        break
+
+
+special_characters = """!@#$%^&*()_+=}{[]'":;?/.><"""
+
+while True: # take the message and validate any spcial caracters
+    message = str(input("what is the message you want to encript/decript "))
+    if any(c in special_characters for c in message):
+        print("Your input contains values that are not suported please try agin")
+        continue
+    else:
+        break
 result = ""
 
 
@@ -238,7 +426,6 @@ for letter in message:
 
         ################ reflector ################
         f = __Man_reflector__(e)
-
         ################ rotor 4 ################
         g = thirdrotor.__work_inverse_rotor__(f,0)
 
@@ -254,7 +441,6 @@ for letter in message:
         result = result + k
 print(result)
 
-# I I I --- 987 --- aaaa  ---->pjon
 
-# y V V IV 6,4,9 --- 200 hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
-# --> cfmbjvfwaazytmdletwbwtamjcfmbjvfwaazytmdletwbwtamjcfmbjvfwaazytmdletwbwtamjcfmbjvfwaazytmdletwbwtamjcfmbjvfwaazytmdletwbwtamjcfmbjvfwaazytmdletwbwtamjcfmbjvfwaazytmdletwbwtamjcfmbjvfwaazytmdletwbwtamj
+# I, II, III --> 987 
+#nCwbUe
