@@ -34,6 +34,13 @@ class Array :
             for item in self._elements:
                 if keyy == item.key:
                     return item.value
+        
+        def linearSearch(self, term):
+            for x in range(0,self._itemCount):
+                if self._elements[x]== term:
+                    return 1
+            else:
+                return 0
             
 class rotor: # a data type that represents a rotor it takes in a number and outputs a number
     def __init__(self,rotor_in,rotor_out,rotor_notch):
@@ -88,8 +95,8 @@ def __plug_board__(letter,inputt,outputt):    # simple yet effective plug board
     # it has 2 lists input and output 
     # it cheaks the letter has what index in the input list and returns the value of the output list at the same index 
     for i in range(len(inputt)):
-        if letter == inputt[i]:
-            return outputt[i]
+        if letter == inputt._elements[i]:
+            return outputt._elements[i]
 
 def __Man_reflector__(number): ## a reflector with hardcoded values
     # the easiest part of the program it takes a value and returns a diffrent one
@@ -345,8 +352,8 @@ while True:
         continue
 
 if y_n == "3":
-    inputt = []
-    outputt = []
+    inputt = Array(62)
+    outputt = Array(62)
     for i in range(0,31):
         while True:
             match = input("match 2 letters together Example <AB>: ") 
@@ -360,27 +367,37 @@ if y_n == "3":
             elif len(match) == 0:
                 print(" please use two letters together")
                 continue
-
+            
+            elif match[0] == match[1]:
+                print(" do not be smart ha afshak")
+                continue
+            
             elif len(match) < 0:
                 print(" soory i did not uderstand that")
                 continue
 
-            elif match[0] in inputt:
+            elif inputt.linearSearch(match[0]) == 1:
                 print("you already assined this before")
-            elif match[1] in inputt:
+
+            
+            elif inputt.linearSearch(match[1]) == 1:
                 print("you already assined this before")
             
-            elif match[0] in outputt:
+            elif outputt.linearSearch(match[0]) == 1:
                 print("you already assined this before")
-            elif match[1] in outputt:
-                print("you already assined this before")
+
+            
+            elif outputt.linearSearch(match[1]) == 1:
+                print("you already assined this before")            
+
             else:
-                inputt.append(match[0])
-                outputt.append(match[1])
+                inputt.insertLast(match[0])
+                outputt.insertLast(match[1])
                 break
+
     for k in range(0,31):
-        inputt.append(outputt[k])
-        outputt.append(inputt[k])
+        inputt.insertLast(outputt._elements[k])
+        outputt.insertLast(inputt._elements[k])
 
 
 
