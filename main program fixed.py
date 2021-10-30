@@ -87,9 +87,9 @@ def __plug_board__(letter,inputt,outputt):    # simple yet effective plug board
     # this plugboard works in a very simple way 
     # it has 2 lists input and output 
     # it cheaks the letter has what index in the input list and returns the value of the output list at the same index 
-    for i in range(len(inputt._elements)):
-        if letter == inputt._elements[i]:
-            return outputt._elements[i]
+    for i in range(len(inputt)):
+        if letter == inputt[i]:
+            return outputt[i]
 
 def __Man_reflector__(number): ## a reflector with hardcoded values
     # the easiest part of the program it takes a value and returns a diffrent one
@@ -329,33 +329,66 @@ map1.insertLast(entry5)
 # ==========================================================  program Starts Here =============================================================================
 
 ##################### configure the plug board ###############
-print("Before we continue please choose wether you want to use a plugboard or not")
-while True: # validation on input
-    y_n = input("press n to not use a plug board, or press y to use a predefined plugboard : ").lower()
-    if y_n == "y":
+
+print("plug board configuration")
+
+while True:
+    y_n = str(input("you have 3 options press 1 continue witout a plugboard press 2 to continue with a predefined plugboard or press 3 to configure your own plugboard : "))
+    if y_n == "1":
         break
-
-    elif y_n =="n":
-        break    
-
+    elif y_n == "2":
+        break
+    elif y_n == "3":
+        break
     else:
-        print("Please enter y or n: ")
-# if y_n == "y":
-#     inputt = []
-#     outputt = []
-#     for i in range(0,32):
-#         match = input("match 2 letters together Example <AB>: ") 
-#         inputt.append(match[0])
-#         outputt.append(match[1])
-#     for k in range(0,32):
-#         inputt.append(outputt[k])
-#         outputt.append(inputt[k])
+        print("please enter 1 2 or 3 : ")
+        continue
 
-if y_n == "y":
+if y_n == "3":
+    inputt = []
+    outputt = []
+    for i in range(0,31):
+        while True:
+            match = input("match 2 letters together Example <AB>: ") 
+            if len(match) > 2:
+                print("please enter 2 values only")
+                continue
+            elif len(match) == 1:
+                print(" please use two letters together")
+                continue
+            
+            elif len(match) == 0:
+                print(" please use two letters together")
+                continue
+
+            elif len(match) < 0:
+                print(" soory i did not uderstand that")
+                continue
+
+            elif match[0] in inputt:
+                print("you already assined this before")
+            elif match[1] in inputt:
+                print("you already assined this before")
+            
+            elif match[0] in outputt:
+                print("you already assined this before")
+            elif match[1] in outputt:
+                print("you already assined this before")
+            else:
+                inputt.append(match[0])
+                outputt.append(match[1])
+                break
+    for k in range(0,31):
+        inputt.append(outputt[k])
+        outputt.append(inputt[k])
+
+
+
+if y_n == "2":
     inputt  =  rotor_out
     outputt = outputtt
 
-elif y_n == "n":
+elif y_n == "1":
     print ("you did not configure a plug board we will proceed without a plug board")
     inputt  =  rotor_out
     outputt = rotor_out
