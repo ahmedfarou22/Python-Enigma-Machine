@@ -1,3 +1,6 @@
+from types import coroutine
+
+
 class rotor: # a data type that represents a rotor it takes in a number and outputs a number
     def __init__(self,rotor_in,rotor_out,rotor_notch):
         self.rotor_in =  rotor_in # a list 
@@ -236,33 +239,65 @@ rotor_dictionary = {
 # ==========================================================  program Starts Here =============================================================================
 
 ##################### configure the plug board ###############
-print("Before we continue please choose wether you want to use a plugboard or not")
-while True: # validation on input
-    y_n = input("press n to not use a plug board, or press y to use a predefined plugboard : ").lower()
-    if y_n == "y":
+print("plug board configuration")
+
+
+while True:
+    y_n = str(input("you have 3 options press 1 continue witout a plugboard press 2 to continue with a predefined plugboard or press 3 to configure your own plugboard : "))
+    if y_n == "1":
         break
-
-    elif y_n =="n":
-        break    
-
+    elif y_n == "2":
+        break
+    elif y_n == "3":
+        break
     else:
-        print("Please enter y or n: ")
-# if y_n == "y":
-#     inputt = []
-#     outputt = []
-#     for i in range(0,32):
-#         match = input("match 2 letters together Example <AB>: ") 
-#         inputt.append(match[0])
-#         outputt.append(match[1])
-#     for k in range(0,32):
-#         inputt.append(outputt[k])
-#         outputt.append(inputt[k])
+        print("please enter 1 2 or 3 : ")
+        continue
+
+if y_n == "3":
+    inputt = []
+    outputt = []
+    for i in range(0,31):
+        while True:
+            match = input("match 2 letters together Example <AB>: ") 
+            if len(match) > 2:
+                print("please enter 2 values only")
+                continue
+            elif len(match) == 1:
+                print(" please use two letters together")
+                continue
+            
+            elif len(match) == 0:
+                print(" please use two letters together")
+                continue
+
+            elif len(match) < 0:
+                print(" soory i did not uderstand that")
+                continue
+
+            elif match[0] in inputt:
+                print("you already assined this before")
+            elif match[1] in inputt:
+                print("you already assined this before")
+            
+            elif match[0] in outputt:
+                print("you already assined this before")
+            elif match[1] in outputt:
+                print("you already assined this before")
+            else:
+                inputt.append(match[0])
+                outputt.append(match[1])
+                break
+    for k in range(0,31):
+        inputt.append(outputt[k])
+        outputt.append(inputt[k])
 
 
-if y_n == "y":
+if y_n == "2":
     inputt  =  ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',"0","1","2","3","4","5","6","7","8","9"]
     outputt =  ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',"9","8","7","6","5","4","3","2","1","0"]
-elif y_n == "n":
+
+elif y_n == "1":
     print ("you did not configure a plug board we will proceed without a plug board")
     inputt  =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"]
     outputt =  ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"]
