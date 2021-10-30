@@ -207,8 +207,6 @@ def __Man_reflector__(number): ## a reflector with hardcoded values
     if number == 61:
         return 61
 
-    
-
 def __iput_output__(number_or_letter): # to make the program easier all the rotars take in a number and output a number this function turns letters to numbers and numbers to letters
     value = 0
     alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"] 
@@ -290,30 +288,30 @@ while True:
 
 while True:
     choose_the_second_rotor = input("second position: choose a  rotor from the one of the five > I, II, III, IV, V : ").upper()
-    if choose_the_first_rotor == "I":
+    if choose_the_second_rotor == "I":
         break
-    if choose_the_first_rotor == "II":
+    if choose_the_second_rotor == "II":
         break
-    if choose_the_first_rotor == "III":
+    if choose_the_second_rotor == "III":
         break
-    if choose_the_first_rotor == "IV":
+    if choose_the_second_rotor == "IV":
         break
-    if choose_the_first_rotor == "V":
+    if choose_the_second_rotor == "V":
         break
     else:
         print("Sorry I did not understand that please enter I, II, III, IV, or V")
 
 while True:
     choose_the_third_rotor  = input("third position: choose a  rotor from the one of the five > I, II, III, IV, V : ").upper()
-    if choose_the_first_rotor == "I":
+    if choose_the_third_rotor == "I":
         break
-    if choose_the_first_rotor == "II":
+    if choose_the_third_rotor == "II":
         break
-    if choose_the_first_rotor == "III":
+    if choose_the_third_rotor == "III":
         break
-    if choose_the_first_rotor == "IV":
+    if choose_the_third_rotor == "IV":
         break
-    if choose_the_first_rotor == "V":
+    if choose_the_third_rotor == "V":
         break
     else:
         print("Sorry I did not understand that please enter I, II, III, IV, or V")
@@ -382,11 +380,12 @@ special_characters = """!@#$%^&*()_+=}{[]'":;?/.><"""
 
 while True: # take the message and validate any spcial caracters
     message = str(input("what is the message you want to encript/decript "))
-    if any(c in special_characters for c in message):
+    if any(c in inputt for c in message):
+        break
+        
+    else:
         print("Your input contains values that are not suported please try agin")
         continue
-    else:
-        break
 result = ""
 
 
@@ -442,5 +441,4 @@ for letter in message:
 print(result)
 
 
-# I, II, III --> 987 
-#nCwbUe
+# import os, psutil; print(psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2)
