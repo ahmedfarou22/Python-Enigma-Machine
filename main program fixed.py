@@ -30,6 +30,15 @@ class Array :
             else:
                 print("Array is full")
         
+        def insertAll(self, item):
+            for letter in item: 
+                if self._size > self._itemCount:
+                    self._elements[self._itemCount] = letter
+                    self._itemCount +=1
+                    
+                else:
+                    print("Array is full")
+        
         def __get_value__ (self,keyy):
             for item in self._elements:
                 if keyy == item.key:
@@ -270,45 +279,31 @@ def __iput_output__(number_or_letter): # to make the program easier all the rota
 
 
 ############## fixed arrays ######################
-
-r_out    =  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-r1_in    =  "ekmflgdqvzntowyhxuspaibrcjBYCHGLFMNAOEPUXDWVKJIRSZTQ4573628910"
-r2_in    =  "ajdksiruxblhwtmcqgznpyfvoeCXJBOQPWAIMUVNHTEFZGSRKYLD0354216987"
-r3_in    =  "bdfhjlcprtxvznyeiwgakmusqoGHJFIBARUQTSPVWYOZXCNLMKDE2347695801"
-r4_in    =  "opqrxwvyutabzcdhsijklegmnfGAXFHIJEVWDTUBONQSCRLYZMPK1329876054"
-r5_in    =  "ikzwvujtsrqlmncdopefyxghbaZYXWVUTSRQPONMLKJIHGFEDCBA9876543210"
-p_routtt =  "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM9876543210"
-
-
-
 rotor_out = Array(62)
+rotor_out.insertAll("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+
+
+
 rotor_one_in = Array(62)
+rotor_one_in.insertAll("ekmflgdqvzntowyhxuspaibrcjBYCHGLFMNAOEPUXDWVKJIRSZTQ4573628910")
+
+
 rotor_two_in = Array(62)
+rotor_two_in.insertAll("ajdksiruxblhwtmcqgznpyfvoeCXJBOQPWAIMUVNHTEFZGSRKYLD0354216987")
+
 rotor_three_in = Array(62)
+rotor_three_in.insertAll("bdfhjlcprtxvznyeiwgakmusqoGHJFIBARUQTSPVWYOZXCNLMKDE2347695801")
+
 rotor_four_in = Array(62)
+rotor_four_in.insertAll("opqrxwvyutabzcdhsijklegmnfGAXFHIJEVWDTUBONQSCRLYZMPK1329876054")
+
 rotor_five_in = Array(62)
+rotor_five_in.insertAll("ikzwvujtsrqlmncdopefyxghbaZYXWVUTSRQPONMLKJIHGFEDCBA9876543210")
+
 outputtt = Array(62)
+outputtt.insertAll("nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM9876543210")
 
-for letter in r_out: # a few loops to add the above values to the corsponding fixed arrays
-    rotor_out.insertLast(letter)
 
-for letter in r1_in: 
-    rotor_one_in.insertLast(letter)
-
-for letter in r2_in: 
-    rotor_two_in.insertLast(letter)
-
-for letter in r3_in: 
-    rotor_three_in.insertLast(letter)
-
-for letter in r4_in:
-    rotor_four_in.insertLast(letter)
-
-for letter in r5_in: 
-    rotor_five_in.insertLast(letter)
-
-for letter in p_routtt:  
-    outputtt.insertLast(letter)
 
 
 
@@ -329,7 +324,6 @@ map1.insertLast(entry2)
 map1.insertLast(entry3)
 map1.insertLast(entry4)
 map1.insertLast(entry5)
-
 
 
 
@@ -398,8 +392,6 @@ if y_n == "3":
     for k in range(0,31):
         inputt.insertLast(outputt._elements[k])
         outputt.insertLast(inputt._elements[k])
-
-
 
 if y_n == "2":
     inputt  =  rotor_out
@@ -519,11 +511,11 @@ while True:
         break
 
 
-special_characters = """!@#$%^&*()_+=}{[]'":;?/.><"""
+
 
 while True: # take the message and validate any spcial caracters
     message = str(input("what is the message you want to encript/decript "))
-    if any(c in r_out for c in message):
+    if any(c in rotor_out._elements for c in message):
         break
         
     else:
@@ -582,7 +574,6 @@ for letter in message:
         k = __plug_board__(j,inputt,outputt)
         result = result + k
 print(result)
-
 
 # to test memory use uncomment the line under
 # import os, psutil; print(psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2)
