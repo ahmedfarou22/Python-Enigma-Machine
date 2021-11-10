@@ -1,3 +1,4 @@
+import time
 class rotor: # a data type that represents a rotor it takes in a number and outputs a number
     def __init__(self,rotor_in,rotor_out,rotor_notch):
         self.rotor_in =  rotor_in # a list 
@@ -408,7 +409,7 @@ while True:
         break
 
 
-special_characters = """!@#$%^&*()_+=}{[]'":;?/.><"""
+
 
 while True: # take the message and validate any spcial caracters
     message = str(input("what is the message you want to encript/decript "))
@@ -472,5 +473,5 @@ for letter in message:
         result = result + k
 print(result)
 
-
+# to test memory use uncomment the line under
 # import os, psutil; print(psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2)
