@@ -1,4 +1,3 @@
-import time
 class rotor: # a data type that represents a rotor it takes in a number and outputs a number
     def __init__(self,rotor_in,rotor_out,rotor_notch):
         self.rotor_in =  rotor_in # a list 
